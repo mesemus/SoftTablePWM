@@ -4,7 +4,7 @@
  *  Created on: Jul 13, 2015
  *      Author: simeki
  */
-#include "soft_table_pwm.h"
+#include "SoftTablePWM.h"
 #include <stdlib.h>
 #include <avr/interrupt.h>
 #include <avr/io.h>
