@@ -8,10 +8,35 @@ of the processing outside of the timer2 interrupt vector.
 The advantage:
 - is lower processing overhead for the PWM
  
-The downside is the memory consumption 
-- each port (PORTB, PORTC, PORTD) needs 256 bytes of memory (allocated on the fly when a pin from that port is used).
+The downside: 
+- memory consumption - each port (PORTB, PORTC, PORTD) needs 256 bytes of memory (allocated on the fly when a pin from that port is used).
 
 Beware that this library is not well tested, take it as a proof of concept for your own optimizations.
+
+The library can be used with the timer2 enabled or disabled (in this case it is up to you to call pwm_cycle on a regular basis).
+
+Usage: see the example file. Simple program:
+
+<code>
+#include <soft_table_pwm.h>
+
+// use the timer2 interrupt handler
+INSTALL_PWM_INTERRUPT
+
+// The setup() method runs once, when the sketch starts
+void setup()   {
+  // tell the library that timer2 interrupt handler is used
+  pwm_init(true);
+  
+  // will use PORTB, pin #1 (this is Arduino pin 9, see https://www.arduino.cc/en/uploads/Hacking/Atmega168PinMap2.png) 
+  int pwm_channel = pwm_add(PWM_B, 1);
+
+  // set pwm value to 128
+  pwm_set(pwm_channel, 128);
+}
+
+void loop() {}
+</code>
 
 Enjoy!
 
