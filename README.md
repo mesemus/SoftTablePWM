@@ -1,4 +1,7 @@
 # SoftTablePWM
+
+## Look at the lowmem branch, same API and lower memory usage
+
 Arduino Software PWM library for enabling PWM on all pins, supports 'set' and 'fade'.
 The library uses pre-filled tables to minimize CPU overhead in timer invocation.
 Default frequency of the PWM (on 16MHz processor) is 244Hz, might be increased
