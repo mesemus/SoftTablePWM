@@ -17,13 +17,12 @@ The library can be used with the timer2 enabled or disabled (in this case it is 
 
 Usage: see the example file. Simple program:
 
-<code>
+```c++
 #include <soft_table_pwm.h>
 
 // use the timer2 interrupt handler
 INSTALL_PWM_INTERRUPT
 
-// The setup() method runs once, when the sketch starts
 void setup()   {
   // tell the library that timer2 interrupt handler is used
   pwm_init(true);
@@ -36,7 +35,7 @@ void setup()   {
 }
 
 void loop() {}
-</code>
+```
 
 Enjoy!
 
