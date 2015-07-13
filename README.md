@@ -6,7 +6,7 @@ This is an implementation of a software PWM library which does the most
 of the processing outside of the timer2 interrupt vector. 
 
 The advantage:
-- is lower processing overhead for the PWM
+- lower processing overhead for the PWM
  
 The downside: 
 - memory consumption - each port (PORTB, PORTC, PORTD) needs 256 bytes of memory (allocated on the fly when a pin from that port is used).
