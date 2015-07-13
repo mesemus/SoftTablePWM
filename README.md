@@ -22,7 +22,7 @@ See fade.ino in the example directory.
 Simple program:
 
 ```c++
-#include <soft_table_pwm.h>
+#include <SoftTablePWM.h>
 
 // use the timer2 interrupt handler
 INSTALL_PWM_INTERRUPT
