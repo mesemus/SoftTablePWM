@@ -11,10 +11,11 @@ be called more often and the frequency will increase - see
 https://www.arduino.cc/en/Tutorial/SecretsOfArduinoPWM for more details.
 
 The advantage of this library:
-- lower processing overhead for the PWM
+- lower processing overhead for the PWM, but higher than the original version in maintrunk
  
 The downside: 
-- memory consumption - each port (PORTB, PORTC, PORTD) needs 256 bytes of memory (allocated on the fly when a pin from that port is used).
+- memory consumption - each port (PORTB, PORTC, PORTD) needs 20 bytes of memory (allocated on the fly when a pin from that port is used).
+- changing pwm value (via pwm_set or pwm_run_fade) takes more time than in the original version 
 
 Beware that this library is not well tested, take it as a proof of concept for your own optimizations.
 

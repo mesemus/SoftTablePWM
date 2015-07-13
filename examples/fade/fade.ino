@@ -1,6 +1,6 @@
 #include <SoftTablePWM.h>
 
-int pwm_channel;
+int pwm_channels[8];
 
 INSTALL_PWM_INTERRUPT
 
@@ -8,10 +8,13 @@ INSTALL_PWM_INTERRUPT
 void setup()   {
   // initialize the digital pin as an output:
   Serial.begin(115200);
-  pwm_channel = pwm_add(PWM_B, 1);
-  pwm_init(true, 256);
-  pwm_set(pwm_channel, 0);
-  pwm_fade(pwm_channel, 255);
+  pwm_init(true);
+  // do not touch PB6, PB7 as this is a crystal :)
+  for (int i=0; i<6; i++) {
+	  pwm_channels[i] = pwm_add(PWM_B, i);
+	  pwm_set(pwm_channels[i], 1);
+	  pwm_fade(pwm_channels[i], 255);
+  }
   Serial.println("initialized");
 }
 
@@ -25,7 +28,9 @@ void loop()
 	Serial.println("tick :)");
 	if (pwm_run_fade()) {
 		ramping_up = !ramping_up;
-		pwm_fade(pwm_channel, ramping_up?255:0);
+		  for (int i=0; i<6; i++) {
+			  pwm_fade(pwm_channels[i], ramping_up?255:0);
+		}
 	}
-	delay(10);
+	delay(1);
 }
