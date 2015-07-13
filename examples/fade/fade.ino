@@ -1,4 +1,4 @@
-#include <soft_table_pwm.h>
+#include <SoftTablePWM.h>
 
 int pwm_channel;
 
