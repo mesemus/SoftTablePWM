@@ -1,6 +1,14 @@
 # SoftTablePWM
 Arduino Software PWM library for enabling PWM on all pins, supports 'set' and 'fade'.
 The library uses pre-filled tables to minimize CPU overhead in timer invocation.
+Default frequency of the PWM (on 16MHz processor) is 244Hz, might be increased
+via decreasing the number of PWM levels in pwm_init function call.
+
+Alternatively change the source code of pwm_init and the interrupt on timer2 
+to occur on comparison rather than on overflow (which is once in 256 ticks) - 
+if you then set the OCR2A register to lower value than 255, the timer will 
+be called more often and the frequency will increase - see 
+https://www.arduino.cc/en/Tutorial/SecretsOfArduinoPWM for more details.
 
 This is an implementation of a software PWM library which does the most 
 of the processing outside of the timer2 interrupt vector. 
