@@ -1,5 +1,5 @@
 # SoftTablePWM
-Arduino Software PWM library for enabling PWM on all pins.
+Arduino Software PWM library for enabling PWM on all pins, supports 'set' and 'fade'.
 The library uses pre-filled tables to minimize CPU overhead in timer invocation.
 
 This is an implementation of a software PWM library which does the most 
