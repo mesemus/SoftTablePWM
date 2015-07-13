@@ -15,7 +15,11 @@ Beware that this library is not well tested, take it as a proof of concept for y
 
 The library can be used with the timer2 enabled or disabled (in this case it is up to you to call pwm_cycle on a regular basis).
 
-Usage: see the example file. Simple program:
+<h2>Usage</h2> 
+
+See fade.ino in the example directory. 
+
+Simple program:
 
 ```c++
 #include <soft_table_pwm.h>
