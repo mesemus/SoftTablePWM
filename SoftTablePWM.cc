@@ -168,11 +168,11 @@ void pwm_cycle() {
 #	endif
 
 #	if PORTS>=2
-		__SET(PORTC, 0)
+		__SET(PORTC, 1)
 #	endif
 
 #	if PORTS>=3
-		__SET(PORTD, 0)
+		__SET(PORTD, 2)
 #	endif
 
 #	if PORTS>=4
