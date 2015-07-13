@@ -10,10 +10,7 @@ if you then set the OCR2A register to lower value than 255, the timer will
 be called more often and the frequency will increase - see 
 https://www.arduino.cc/en/Tutorial/SecretsOfArduinoPWM for more details.
 
-This is an implementation of a software PWM library which does the most 
-of the processing outside of the timer2 interrupt vector. 
-
-The advantage:
+The advantage of this library:
 - lower processing overhead for the PWM
  
 The downside: 
