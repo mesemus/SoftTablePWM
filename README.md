@@ -27,7 +27,8 @@ void setup()   {
   // tell the library that timer2 interrupt handler is used
   pwm_init(true);
   
-  // will use PORTB, pin #1 (this is Arduino pin 9, see https://www.arduino.cc/en/uploads/Hacking/Atmega168PinMap2.png) 
+  // will use PORTB, pin #1 (this is Arduino pin 9, 
+  // see https://www.arduino.cc/en/uploads/Hacking/Atmega168PinMap2.png ) 
   int pwm_channel = pwm_add(PWM_B, 1);
 
   // set pwm value to 128
